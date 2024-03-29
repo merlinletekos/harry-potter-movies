@@ -1,0 +1,10 @@
+<div class="movies-list">
+  <div>
+    <hpm-movie-filter></hpm-movie-filter>
+  </div>
+  <div>
+    @for(movie of movieList; track movie.id) {
+      <hpm-movie-card [movie]="movie"></hpm-movie-card>
+    }
+  </div>
+</div>

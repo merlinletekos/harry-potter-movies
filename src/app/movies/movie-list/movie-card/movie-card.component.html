@@ -1,0 +1,11 @@
+<div class="card-container">
+  <div>
+    <p class="title">{{ movie?.title }}</p>
+    <div class="card-content">
+      <p>Release date: {{ movie?.release_date }}</p>
+      <p>Budget: {{ movie?.budget | budget }}</p>
+      <p>Duration: {{ movie?.duration | duration  }}</p>
+    </div>
+  </div>
+  <button [id]="movie?.id">Details</button>
+</div>
