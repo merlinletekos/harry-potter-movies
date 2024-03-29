@@ -1,0 +1,46 @@
+import {Component, OnDestroy, OnInit} from '@angular/core';
+import {ActivatedRoute} from "@angular/router";
+import {MovieService} from "../shared/movie.service";
+import {Subscription, tap} from "rxjs";
+import {MovieObject} from "../shared/movie.object";
+import {MovieSummaryComponent} from "./movie-summary/movie-summary.component";
+import {MovieDetailsComponent} from "./movie-details/movie-details.component";
+
+@Component({
+  selector: 'hpm-movie',
+  standalone: true,
+  imports: [
+    MovieSummaryComponent,
+    MovieDetailsComponent
+  ],
+  templateUrl: './movie.component.html',
+  styleUrl: './movie.component.css'
+})
+export class MovieComponent implements OnInit, OnDestroy {
+
+  subscription = new Subscription();
+  movieId = this.activatedRoute.snapshot.params['movieId'];
+  movie!: MovieObject;
+
+  constructor(
+    private readonly activatedRoute: ActivatedRoute,
+    private readonly movieService: MovieService
+  ) {}
+
+  ngOnInit() {
+    this.subscription.add(
+      this.movieService.getMovieById(this.movieId)
+        .pipe(
+          tap((movie) => {
+            this.movie = movie;
+          })
+        )
+        .subscribe()
+    );
+  }
+
+  ngOnDestroy() {
+    this.subscription.unsubscribe();
+  }
+
+}
