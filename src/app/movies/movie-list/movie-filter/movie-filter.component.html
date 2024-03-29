@@ -1,0 +1,13 @@
+<div class="filter-container">
+  <span class="title">Filter</span>
+  <div class="filter-form">
+    <div>
+      <label for="title">Title</label>
+      <input id="title" [ngModel]="titleFilter" (ngModelChange)="updateTitleFilter($event)">
+    </div>
+    <div>
+      <label for="release_date">Release year</label>
+      <input id="release_date" type="number" [ngModel]="releaseYearFilter" (ngModelChange)="updateReleaseYearFilter($event)">
+    </div>
+  </div>
+</div>

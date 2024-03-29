@@ -1,0 +1,15 @@
+.filter-container {
+  padding: 16px 16px;
+  margin: 16px;
+  border: 1px solid gray;
+
+  .title {
+    font-weight: bold;
+  }
+
+  .filter-form {
+    display: flex;
+    flex-direction: row;
+    gap: 8px;
+  }
+}
