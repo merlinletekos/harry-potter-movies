@@ -6,8 +6,8 @@
       <input id="title" [ngModel]="titleFilter" (ngModelChange)="updateTitleFilter($event)">
     </div>
     <div>
-      <label for="release_date">Release date</label>
-      <input id="release_date" [ngModel]="releaseDateFilter" (ngModelChange)="updateReleaseDateFilter($event)">
+      <label for="release_date">Release year</label>
+      <input id="release_date" type="number" [ngModel]="releaseYearFilter" (ngModelChange)="updateReleaseYearFilter($event)">
     </div>
   </div>
 </div>

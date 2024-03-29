@@ -1,4 +1,4 @@
-import {Component, EventEmitter, Output} from '@angular/core';
+import {Component, EventEmitter, OnInit, Output} from '@angular/core';
 import {FormsModule} from "@angular/forms";
 
 @Component({
@@ -10,27 +10,36 @@ import {FormsModule} from "@angular/forms";
   templateUrl: './movie-filter.component.html',
   styleUrl: './movie-filter.component.css'
 })
-export class MovieFilterComponent {
+export class MovieFilterComponent implements OnInit {
 
-  @Output() titleFilterEmitter: EventEmitter<string> = new EventEmitter<string>();
-  @Output() releaseDateFilterEmitter: EventEmitter<string> = new EventEmitter<string>();
+  @Output() titleFilterEmitter = new EventEmitter<string>();
+  @Output() releaseYearFilterEmitter = new EventEmitter<string>();
 
-  titleFilter: string = '';
-  releaseDateFilter: string = '';
+  titleFilter!: string;
+  releaseYearFilter!: number;
+
+  ngOnInit() {
+    console.log(this.releaseYearFilter);
+  }
 
   /**
    * Emit the new value to the parent component
-   * @param value the new value from the title input
+   * @param value string the new value from the title input
    */
   updateTitleFilter(value: string) {
+    console.log(value);
     this.titleFilterEmitter.emit(value);
   }
 
   /**
    * Emit the new value to the parent component
-   * @param value the new value from the release date input
+   * @param value number the new value from the release year input
    */
-  updateReleaseDateFilter(value: string) {
-    this.releaseDateFilterEmitter.emit(value);
+  updateReleaseYearFilter(value: number | null) {
+    let valueEmit = '';
+    if (value !== null) {
+      valueEmit = value.toString();
+    }
+    this.releaseYearFilterEmitter.emit(valueEmit);
   }
 }
