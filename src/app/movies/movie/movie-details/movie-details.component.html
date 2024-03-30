@@ -1,0 +1,27 @@
+<div>
+  <h3>Details</h3>
+  <table>
+    <tbody>
+      <tr>
+        <th>Box office</th>
+        <td>{{ movie.box_office | budget }}</td>
+      </tr>
+      <tr>
+        <th>Budget</th>
+        <td>{{ movie.budget | budget }}</td>
+      </tr>
+      <tr>
+        <th>Duration</th>
+        <td>{{ movie.duration | duration }}</td>
+      </tr>
+      <tr>
+        <th>Producers</th>
+        <td>{{ movie.producers | stringArray }}</td>
+      </tr>
+      <tr>
+        <th>Cinematographers</th>
+        <td>{{ movie.cinematographers | stringArray }}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>

@@ -1,5 +1,5 @@
 import {Component, OnInit} from '@angular/core';
-import {MovieServiceService} from "../shared/movie-service.service";
+import {MovieService} from "../shared/movie.service";
 import {BehaviorSubject, combineLatest, map, Observable} from "rxjs";
 import {MinimalMovieData, MovieObject} from "../shared/movie.object";
 import {MovieCardComponent} from "./movie-card/movie-card.component";
@@ -24,7 +24,7 @@ export class MovieListComponent implements OnInit {
 
   movieList$!: Observable<Array<Pick<MovieObject, MinimalMovieData>>>;
 
-  constructor(private readonly movieService: MovieServiceService) {}
+  constructor(private readonly movieService: MovieService) {}
 
   ngOnInit() {
     this.movieList$ = combineLatest([

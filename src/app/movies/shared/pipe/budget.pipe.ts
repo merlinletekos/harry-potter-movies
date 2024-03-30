@@ -10,7 +10,7 @@ export class BudgetPipe implements PipeTransform {
    * Transform string budget to : ${value} million
    * @param value value of the budget
    */
-  transform(value: string | undefined): string {
+  transform(value: string | number | undefined): string {
     if (value) {
       return `$${value} million`;
     }

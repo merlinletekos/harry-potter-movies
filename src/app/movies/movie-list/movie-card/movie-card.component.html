@@ -7,5 +7,5 @@
       <p>Duration: {{ movie?.duration | duration  }}</p>
     </div>
   </div>
-  <button [id]="movie?.id">Details</button>
+  <button [id]="movie?.id" (click)="goDetail(movie?.id)">Details</button>
 </div>
