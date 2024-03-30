@@ -1,4 +1,5 @@
 <div class="movie-container">
+  <button (click)="goBack()">Go back</button>
   <hpm-movie-summary [movie]="movie"></hpm-movie-summary>
-  <hpm-movie-details></hpm-movie-details>
+  <hpm-movie-details [movie]="movie"></hpm-movie-details>
 </div>

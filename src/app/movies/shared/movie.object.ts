@@ -7,7 +7,7 @@ export interface MovieObject {
   duration:         number;
   budget:           string;
   release_date:     Date;
-  boxOffice:        number;
+  box_office:        number;
   cinematographers: string[];
   poster:           string;
   producers:        string[];

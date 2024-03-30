@@ -8,7 +8,7 @@ export const routes: Routes = [
     component: MovieListComponent
   },
   {
-    path: 'movies/:movieId',
+    path: 'movie/:movieId',
     component: MovieComponent
   }
 ];

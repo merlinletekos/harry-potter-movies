@@ -5,6 +5,7 @@ import {Subscription, tap} from "rxjs";
 import {MovieObject} from "../shared/movie.object";
 import {MovieSummaryComponent} from "./movie-summary/movie-summary.component";
 import {MovieDetailsComponent} from "./movie-details/movie-details.component";
+import {Location} from "@angular/common";
 
 @Component({
   selector: 'hpm-movie',
@@ -24,7 +25,8 @@ export class MovieComponent implements OnInit, OnDestroy {
 
   constructor(
     private readonly activatedRoute: ActivatedRoute,
-    private readonly movieService: MovieService
+    private readonly movieService: MovieService,
+    private readonly location: Location
   ) {}
 
   ngOnInit() {
@@ -37,6 +39,10 @@ export class MovieComponent implements OnInit, OnDestroy {
         )
         .subscribe()
     );
+  }
+
+  public goBack(): void {
+    this.location.back();
   }
 
   ngOnDestroy() {
