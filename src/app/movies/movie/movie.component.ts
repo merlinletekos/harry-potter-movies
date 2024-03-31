@@ -20,7 +20,7 @@ import {Location} from "@angular/common";
 export class MovieComponent implements OnInit, OnDestroy {
 
   subscription = new Subscription();
-  movieId = this.activatedRoute.snapshot.params['movieId'];
+  movieId: string = this.activatedRoute.snapshot.params['movieId'];
   movie!: MovieObject;
 
   constructor(
@@ -29,7 +29,7 @@ export class MovieComponent implements OnInit, OnDestroy {
     private readonly location: Location
   ) {}
 
-  ngOnInit() {
+  ngOnInit(): void {
     this.subscription.add(
       this.movieService.getMovieById(this.movieId)
         .pipe(
@@ -41,11 +41,14 @@ export class MovieComponent implements OnInit, OnDestroy {
     );
   }
 
+  /**
+   * Go on the previous page
+   */
   public goBack(): void {
     this.location.back();
   }
 
-  ngOnDestroy() {
+  ngOnDestroy(): void {
     this.subscription.unsubscribe();
   }
 

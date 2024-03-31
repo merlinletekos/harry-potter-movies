@@ -26,7 +26,7 @@ export class MovieListComponent implements OnInit {
 
   constructor(private readonly movieService: MovieService) {}
 
-  ngOnInit() {
+  ngOnInit(): void {
     this.movieList$ = combineLatest([
       this.filterTitleQuery$,
       this.filterReleaseYearQuery$,
@@ -38,18 +38,26 @@ export class MovieListComponent implements OnInit {
           filterReleaseYearQuery,
           movie
         ]) => {
-            return movie.filter(x =>
+            return movie.filter((x: Pick<MovieObject, MinimalMovieData>) =>
               x.title.toLowerCase().includes(filterTitleQuery.toLowerCase()) &&
               this.isStringIncludeIntoDate(x.release_date, filterReleaseYearQuery))
         })
       )
   }
 
-  filterMovieListByTitle(value: string) {
+  /**
+   * Update title filter with new value
+   * @param value new value
+   */
+  filterMovieListByTitle(value: string): void {
     this.filterTitleQuery$.next(value);
   }
 
-  filterMovieListByReleaseYear(value: string) {
+  /**
+   * Update filter release year value
+   * @param value new value
+   */
+  filterMovieListByReleaseYear(value: string): void {
     this.filterReleaseYearQuery$.next(value);
   }
 
