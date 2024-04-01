@@ -69,7 +69,6 @@ export class MovieListComponent implements OnInit {
    */
   private isStringIncludeIntoDate(releaseDate: Date, value: string): boolean {
     const date = new Date(releaseDate);
-    console.log(date);
     return date.getFullYear().toString().includes(value);
   }
 
