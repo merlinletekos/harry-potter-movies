@@ -1,0 +1,13 @@
+<div class="movies-list">
+  <div>
+    <hpm-movie-filter
+      (titleFilterEmitter)="filterMovieListByTitle($event)"
+      (releaseYearFilterEmitter)="filterMovieListByReleaseYear($event)"
+    ></hpm-movie-filter>
+  </div>
+  <div>
+    @for(movie of movieList$ | async; track movie.id) {
+      <hpm-movie-card [movie]="movie"></hpm-movie-card>
+    }
+  </div>
+</div>

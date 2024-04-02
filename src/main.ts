@@ -37,7 +37,7 @@ const handlers = [
         "title": "Harry Potter and the Prisoner of Azkaban",
         "duration": "142",
         "budget": "130",
-        "release_date": "2002-11-15",
+        "release_date": "2004-05-02",
         "box_office": "797.4",
         "cinematographers": [ "Michael Seresin" ],
         "poster": "https://www.wizardingworld.com/images/products/films/rectangle-3.png",
@@ -163,7 +163,7 @@ const handlers = [
         "title": "Harry Potter and the Prisoner of Azkaban",
         "duration": "142",
         "budget": "130",
-        "release_date": "2002-11-15"
+        "release_date": "2004-05-02"
       }, {
         "id": "cae233c5-6b08-4201-a665-194110d9c889",
         "title": "Harry Potter and the Goblet of Fire",

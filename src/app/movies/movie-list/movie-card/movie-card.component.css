@@ -1,0 +1,19 @@
+.card-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  border: 1px solid gray;
+  padding: 0.5rem;
+
+  .title {
+    font-size: 18px;
+    font-weight: bold;
+  }
+
+  .card-content {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    font-size: smaller;
+  }
+}

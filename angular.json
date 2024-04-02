@@ -8,7 +8,7 @@
       "schematics": {},
       "root": "",
       "sourceRoot": "src",
-      "prefix": "app",
+      "prefix": "hpm",
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-angular:application",
@@ -92,5 +92,8 @@
         }
       }
     }
+  },
+  "cli": {
+    "analytics": "93730f09-7e66-4136-a2a1-e00dc1f6b27d"
   }
 }
